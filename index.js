@@ -249,8 +249,12 @@ buttons.forEach(e => {
         }
 
         else{
-            let lastd = eval(oprationValue)
-            sCreen.value = `${lastd}`;
+            let lastd = eval(oprationValue);
+            
+            let parts = lastd.toString().split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            let retur =  parts.join('.');
+            sCreen.value = `${retur}`;
         
         }
 
